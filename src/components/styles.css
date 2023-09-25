@@ -1,0 +1,17 @@
+*{
+    background: transparent;
+}
+
+.custom-card{
+    max-width: 595px;
+    box-shadow: 3px 3px 14px #bebebe4c;
+    border-radius: 20px;
+    left: 0;
+    top:0;
+
+}
+.custom-card .ant-card-head {
+    background-color: #d0f7fa; 
+    font-family: "Poppins-SemiBold", Helvetica;
+    border-radius: 19px 19px 1px 1px;
+  }
