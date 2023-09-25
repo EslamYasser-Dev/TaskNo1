@@ -1,6 +1,6 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This template provides a Task one api handling via React working in Vite with HMR and some ESLint rules, Ant Design system.
 
 Currently, two official plugins are available:
 
@@ -25,3 +25,14 @@ If you are developing a production application, we recommend updating the config
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+
+## you must run the mock api before try to access the app
+- open your terminal
+- clone the project
+- change directory to /taskone
+- type npm install to get all related pacakges.
+- change directory to /taskone
+- just type <prism mock -h 0.0.0.0 ./ApplicationForm.yaml>
+- after it became up and running try to conect.
+
