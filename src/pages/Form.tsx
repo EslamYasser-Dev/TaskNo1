@@ -9,6 +9,7 @@ const Form = () => {
     <div className='flex flex-row'>
     <SideBar/>
     <FormCard/>
+
     </div>
     </>
   )

@@ -1,17 +1,56 @@
 *{
-    background: transparent;
+  color: #000;
+}
+.heading {
+  background: transparent;
+  font-family: "Poppins-SemiBold", Helvetica;
+  color: #000;
+  font-size: 1.5625rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 159.5%;
+}
+.leading{
+    color: #000;
+    font-size: 0.875rem;
+    font-style: normal;
+font-weight: 600;
+line-height: 114%; /* 1.425rem */
 }
 
-.custom-card{
-    max-width: 595px;
-    box-shadow: 3px 3px 14px #bebebe4c;
-    border-radius: 20px;
-    left: 0;
-    top:0;
-
+.custom-card {
+  max-width: 50rem;
+  box-shadow: 3px 3px 14px #bebebe4c;
+  border-radius: 20px;
+  margin-left: 11.62rem;
+  margin-bottom: 3.81rem;
+  transition: 1s;
+  justify-content: center;
 }
+
+.custom-card:hover {
+  transition: 1s;
+  box-shadow: 3px 3px 14px #5e5d5d4c;
+}
+
 .custom-card .ant-card-head {
-    background-color: #d0f7fa; 
-    font-family: "Poppins-SemiBold", Helvetica;
-    border-radius: 19px 19px 1px 1px;
-  }
+  background-color: #d0f7fa;
+  border-radius: 19px 19px 1px 1px;
+}
+
+.rectangular{
+    width: 32rem;
+height: 13.125rem;
+flex-shrink: 0;
+border-radius: 0.3125rem;
+border: 1px dashed #000;
+
+/* L Drop shadow */
+box-shadow: 3px 3px 9px 0px rgba(190, 190, 190, 0.13);
+}
+
+.Box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

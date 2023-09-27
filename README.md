@@ -31,7 +31,7 @@ If you are developing a production application, we recommend updating the config
 - open your terminal
 - clone the project
 - change directory
-- type ``npm install`` to get all related pacakges.
-- just type js```<prism mock -h 0.0.0.0 ./ApplicationForm.yaml>```
+- type `` npm install `` to get all related pacakges.
+- just type js``` prism mock -h 0.0.0.0 ./ApplicationForm.yaml ```
 - after it became up and running try to conect.
 

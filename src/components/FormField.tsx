@@ -1,50 +1,98 @@
-import { Card, Spin } from "antd";
+import { Card, Form, Divider, Switch } from "antd";
 import { useEffect, useState } from "react";
-import { DataModel } from "../services/DataModel";
 import axios from "axios";
 import "./styles.css";
+import Checkbox from "./inputs/CheckBox";
+import UploadButton from "./UploadButton/UploadButton";
+import { data } from "../services/DataModel";
 
 const FormCard = () => {
-  const [data, setData] = useState<DataModel | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [data, setData] = useState<data | null>(null);
+  // const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-
-    axios.get<DataModel>('http://0.0.0.0:4010/api/330.0639190345027/programs/ea/application-form')
-      .then(response => {
+    axios
+      .get<data>(
+        "http://0.0.0.0:4010/api/330.0639190345027/programs/ea/application-form"
+      )
+      .then((response) => {
         setData(response.data);
-        setLoading(false);
+        console.log(response.data);
+        // setLoading(false);
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
-        setError(error);
-        setLoading(true);
+        // setLoading(true);
       });
   }, []);
 
-  if (loading) {
-    return <Spin size={"large"} />;
-  }
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
-
   return (
-    <div>
+    <Form>
+      {/* image upload */}
       <Card title="upload an Image" className="custom-card">
-        {/* <Image width={200} height={200}  /> */}
-         <h1>{data?.dataModel?.attributes?.profile.resume.mandatory}</h1> 
-         <h1>{data?.dataModel?.attributes?.profile.resume.mandatory}</h1> 
-
-         <h1>{data?.dataModel?.attributes?.profile.resume.mandatory}</h1> 
-
+          <UploadButton />
       </Card>
-      <h1>{data?.dataModel?.attributes?.profile.resume.mandatory}</h1> 
 
-    </div>
+      {/*personal info */}
+      <Card title="Personal Information" className="custom-card">
+        {data?.data?.attributes?.personalInformation &&
+          Object.keys(data.data.attributes.personalInformation).map((key) => {
+            if (data) {
+              return (
+                <div>
+                  <div key={key} className="Box">
+                    <h1 className="leading">{key}</h1>
+                    <Checkbox
+                      checked={
+                        data.data.attributes.personalInformation[key].show
+                      }
+                    />
+                         <Switch defaultChecked={(data.data.attributes.personalInformation[key].internalUse)} />
+                          <span>{(data.data.attributes.personalInformation[key].internalUse)?"Show":"hide"}</span>
+                  </div>
+                  <Divider />
+                </div>
+              );
+            }
+          })}
+      </Card>
+
+      {/* profile */}
+      <Card title="Profile" className="custom-card">
+        {data?.data.attributes?.profile &&
+          Object.keys(data.data.attributes.profile).map((key) => {
+            if (key !== "profileQuestions") {
+              return (
+                <div>
+                  <div key={key} className="Box">
+                    <h1 className="leading">{key}</h1>
+                    <Checkbox
+                      checked={data.data.attributes.profile[key]?.show}
+                    />
+                         <Switch  checked={(data.data.attributes.profile[key]?.mandatory)} />
+                         <span>{(data.data.attributes.profile[key]?.mandatory)?"Show":"hide"}</span>
+
+                  </div>
+                  <Divider />
+                </div>
+              );
+            }
+          })}
+      </Card>
+
+      <Card title="Additional questions" className="custom-card">
+        {data?.data?.attributes?.customisedQuestions?.map((question:any, index:string) => (
+          <div key={index}>
+            <h1>{question.question}</h1>
+            <p>{question.choices.join(", ")}</p>
+            <Checkbox checked={!question.disqualify} />
+            <Switch checked={question.other} />
+            <Divider />
+          </div>
+        ))}
+      </Card>
+    </Form>
   );
-}
+};
 
 export default FormCard;
