@@ -1,0 +1,38 @@
+.sidebar {
+  background-color: #fff;
+}
+
+.icons {
+  display: block;
+  font-size: 1.4rem;
+  margin: 1.1rem 1rem 0.5rem 1rem;
+  cursor: pointer;
+  line-height: 4rem;
+  transition: 1.5s;
+  border-radius: 15px;
+}
+.homeic{
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.icons:hover{
+    background-color: #00635bbe;
+    border-radius: 30px;
+    transition: 1s;
+}
+
+.headeritems{
+    padding:1.5rem 10rem 3rem 1rem;
+    width:10rem;
+    margin-right: 0.1rem;
+}
+
+.selected{
+    background-color: #00635b;
+    color: #FFF;
+font-size: 1.25rem;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}

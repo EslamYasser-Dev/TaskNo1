@@ -1,47 +1,44 @@
-    {
+const FieldsNames =     {
         "data": {
             "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
             "type": "applicationForm",
             "attributes": {
                 "coverImage": "http://example.com",
                 "personalInformation": {
-                    "firstName": {
+                    "First Name": {
+            
+                    },
+                    "Last Name": {
+                       
+                    },
+                    "Email": {
+                        
+                    },
+                    "Phone": {
                         "internalUse": false,
                         "show": true
                     },
-                    "lastName": {
+                    "Nationality": {
                         "internalUse": false,
                         "show": true
                     },
-                    "emailId": {
+                    "Current Residence": {
                         "internalUse": false,
                         "show": true
                     },
-                    "phoneNumber": {
+                    "ID Number": {
                         "internalUse": false,
                         "show": true
                     },
-                    "nationality": {
+                    "Date of Birth": {
                         "internalUse": false,
                         "show": true
                     },
-                    "currentResidence": {
+                    "Gender": {
                         "internalUse": false,
                         "show": true
                     },
-                    "idNumber": {
-                        "internalUse": false,
-                        "show": true
-                    },
-                    "dateOfBirth": {
-                        "internalUse": false,
-                        "show": true
-                    },
-                    "gender": {
-                        "internalUse": false,
-                        "show": true
-                    },
-                    "personalQuestions": [
+                    "Personal Questions": [
                         {
                             "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
                             "type": "Paragraph",
@@ -56,19 +53,19 @@
                     ]
                 },
                 "profile": {
-                    "education": {
+                    "Education": {
                         "mandatory": true,
                         "show": true
                     },
-                    "experience": {
+                    "Experience": {
                         "mandatory": true,
                         "show": true
                     },
-                    "resume": {
+                    "Resume": {
                         "mandatory": true,
                         "show": true
                     },
-                    "profileQuestions": [
+                    "Profile Questions": [
                         {
                             "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
                             "type": "Paragraph",
@@ -98,3 +95,5 @@
             }
         }
     }
+
+    export default FieldsNames;

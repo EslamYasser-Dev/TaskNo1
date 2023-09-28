@@ -2,9 +2,10 @@ import { useState } from "react";
 
 type Props = {
   checked: boolean;
-}
+  label: string;
+};
 
-function Checkbox({ checked }: Props) {
+function Checkbox({ checked, label }: Props) {
   const [isChecked, setIsChecked] = useState(checked);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -13,8 +14,14 @@ function Checkbox({ checked }: Props) {
 
   return (
     <div>
-        <input type="checkbox" checked={isChecked} onChange={handleChange} />
-        <span>internal</span>
+      <input
+        type="checkbox"
+        checked={isChecked}
+        onChange={handleChange}
+        color="#087b2f"
+        style={{ borderColor: isChecked ? "#087b2f" : "gray" }}
+      />
+      <span>{label}</span>
     </div>
   );
 }

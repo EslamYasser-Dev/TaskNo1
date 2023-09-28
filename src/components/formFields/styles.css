@@ -20,10 +20,10 @@ line-height: 114%; /* 1.425rem */
 
 .custom-card {
   max-width: 50rem;
+  min-width: 20rem;
   box-shadow: 3px 3px 14px #bebebe4c;
-  border-radius: 20px;
-  margin-left: 11.62rem;
-  margin-bottom: 3.81rem;
+  border-radius: 25px;
+ margin: 2rem;
   transition: 1s;
   justify-content: center;
 }
@@ -38,19 +38,24 @@ line-height: 114%; /* 1.425rem */
   border-radius: 19px 19px 1px 1px;
 }
 
-.rectangular{
-    width: 32rem;
-height: 13.125rem;
-flex-shrink: 0;
-border-radius: 0.3125rem;
-border: 1px dashed #000;
 
-/* L Drop shadow */
-box-shadow: 3px 3px 9px 0px rgba(190, 190, 190, 0.13);
-}
 
 .Box{
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.plus{
+font-size: 0.9375rem;
+font-style: normal;
+font-weight: 600;
+line-height: 1.5rem;
+cursor: pointer;
+transition: 1s;
+}
+
+.plus:hover{
+  color: #bbb5b59a;
+  transition: 1s;
 }
