@@ -15,7 +15,7 @@ const FormField = () => {
     setData(FieldsNames.data);
   }, []);
 
-  const addBTNHandler = (e: any) => {
+  const addBTNHandler = () => {
     // Add your logic here
     let newData = {...data}; // create a copy of the data state
     newData.attributes.personalInformation['newField'] = { show: true, internalUse: false }; // add a new field
