@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 import Checkbox from "../inputs/CheckBox";
 import UploadButton from "../UploadButton/UploadButton";
 import FieldsNames from "../../assets/fieldsNames";
@@ -15,14 +15,14 @@ const FormField = () => {
     setData(FieldsNames.data);
   }, []);
 
-  const addBTNHandler = (e) => {
+  const addBTNHandler = (e: any) => {
     // Add your logic here
     let newData = {...data}; // create a copy of the data state
     newData.attributes.personalInformation['newField'] = { show: true, internalUse: false }; // add a new field
     setData(newData); // update the state with the new data
   }
 
-  const openForm = (name) => {
+  const openForm = (name: SetStateAction<string>) => {
     setOpen(true);
     setFieldName(name);
   };
